@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPFCursus", "CSharpPFC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPFOefenmap", "CSharpPFOefenmap\CSharpPFOefenmap.csproj", "{56884F05-6500-4811-9BB5-FFE6362CB87E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter", "Twitter\Twitter.csproj", "{B7D2E78F-720E-49A9-A58E-D3AA114FA17F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facturatie", "Facturatie\Facturatie.csproj", "{DE784C71-3713-4C79-B271-968004C42152}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{56884F05-6500-4811-9BB5-FFE6362CB87E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56884F05-6500-4811-9BB5-FFE6362CB87E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56884F05-6500-4811-9BB5-FFE6362CB87E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D2E78F-720E-49A9-A58E-D3AA114FA17F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D2E78F-720E-49A9-A58E-D3AA114FA17F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D2E78F-720E-49A9-A58E-D3AA114FA17F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D2E78F-720E-49A9-A58E-D3AA114FA17F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE784C71-3713-4C79-B271-968004C42152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE784C71-3713-4C79-B271-968004C42152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE784C71-3713-4C79-B271-968004C42152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE784C71-3713-4C79-B271-968004C42152}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

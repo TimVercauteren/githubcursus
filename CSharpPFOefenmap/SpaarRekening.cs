@@ -57,6 +57,5 @@ namespace CSharpPFOefenmap
             base.Afbeelden();
             Console.WriteLine($"Interest op de rekening: { Interest * 100}%");
         }
-
     }
 }
