@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<muziekfestival xmlns ="http://www.vdab.be/festival"
+                xmlns:xsi ="http://wwww.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation ="http://www.vdab.be/festival FestivalSchema.xsd">
+  <dagen>
+    <dag datum ="2016-07-08">
+      <optreden>
+        <beginuur>18:20:00</beginuur>
+        <einduur>19:30:00</einduur>
+        <artist>Laura Mvala</artist>
+      </optreden>
+      <optreden>
+        <beginuur>20:00:00</beginuur>
+        <einduur>21:15:00</einduur>
+        <artist>Charles Bradley</artist>
+      </optreden>
+      <optreden>
+        <beginuur>21:45:00</beginuur>
+        <einduur>23:00:00</einduur>
+        <artist>Gregory Porter</artist>
+      </optreden>
+      <optreden>
+        <beginuur>23:30:00</beginuur>
+        <einduur>01:00:00</einduur>
+        <artist>Damien Rice</artist>
+      </optreden>
+    </dag>
+    <dag datum ="2016-07-08">
+      <optreden>
+        <beginuur>18:20:00</beginuur>
+        <einduur>19:30:00</einduur>
+        <artist>Kurt Vile</artist>
+      </optreden>
+      <optreden>
+        <beginuur>20:00:00</beginuur>
+        <einduur>21:10:00</einduur>
+        <artist>SX</artist>
+      </optreden>
+      <optreden>
+        <beginuur>21:45:00</beginuur>
+        <einduur>23:00:00</einduur>
+        <artist>Cinematic Orchestra</artist>
+      </optreden>
+      <optreden>
+        <beginuur>23:40:00</beginuur>
+        <einduur>01:00:00</einduur>
+        <artist>Air</artist>
+      </optreden>
+    </dag>
+  </dagen>
+</muziekfestival>

@@ -12,8 +12,12 @@ namespace CSharpPFCursus
         const decimal EuroKoers = 40.3399m;
         static void Main(string[] args)
         {
-            
-            Console.WriteLine("uint max value: {0}", byte.MaxValue);
+            DateTime tijd = new DateTime(1990,11,30);
+            string [] nieuweTijd = tijd.GetDateTimeFormats();
+            foreach (string s in nieuweTijd)
+            {
+                Console.WriteLine(s);
+            }
         }
     }
 }

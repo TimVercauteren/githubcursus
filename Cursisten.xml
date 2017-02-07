@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cursisten xmlns="http://www.vdab.be/cursisten"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.vdab.be/cursisten Cursisten.xsd">
+  <cursist voornaam="Joe" familienaam="Dalton" email="joe@daltons.org" gebdatum="1966-08-01" traject ="Java"/>
+  <cursist voornaam="Jack" familienaam ="Dalton" email="jack@ddaltons.org" gebdatum="1964-08-28" traject="C#"/>
+  <cursist voornaam="Lucky" familienaam="Luke" email="lucky.luke@goodones.org" gebdatum="1965-01-31" traject ="PHP"/>
+  
+</cursisten>

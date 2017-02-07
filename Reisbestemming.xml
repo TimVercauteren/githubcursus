@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<reisbestemming naam ="Mali"
+  xmlns="http://www.vdab.be/reisbestemming"        
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"           
+  xsi:schemaLocation="http://www.vdab.be/reisbestemming Reisbestemming.xsd">
+  <hotel naam ="Hotel X" prijs ="1000">
+    <excursie naam ="Strandwandeling" prijs ="5"/>
+    <excursie naam ="Boswandeling" prijs ="10"/>
+    <excursie naam ="Fietstocht" prijs ="15.5"/>
+  </hotel>
+  <hotel naam ="Hotel Y" prijs ="499.9"/>
+  <hotel naam ="Hotel Z" prijs ="799.9">
+    <excursie naam ="Zwembad" prijs ="20"/>
+  </hotel>
+</reisbestemming>
+                

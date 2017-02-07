@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bioscoopfilm xmlns="http://www.vdab.be/bioscoopfilm"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://vdab.be/bioscoopfilm Bioscoopfilm.xsd">
+  <naam>The lord of the rings</naam>
+  <genres>
+    <genre naam ="Avontuur"/>
+    <genre naam ="Fantasy"/>
+    <genre naam ="Engelstalig"/>
+  </genres>
+  <duurtijd>160</duurtijd>
+  <regisseur>Peter Jackson</regisseur>
+  <acteurs>
+    <acteur naam ="Elijah Wood"/>
+    <acteur naam ="Ian McKellen"/>
+    <acteur naam ="Viggo Mortensen"/>
+    <acteur naam ="Sean Bean"/>
+    <acteur naam ="Orlando Bloom"/>
+  </acteurs>
+</bioscoopfilm>
