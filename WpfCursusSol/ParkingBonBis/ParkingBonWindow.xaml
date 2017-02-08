@@ -1,7 +1,7 @@
-﻿<Window x:Class="ParkingBon.ParkingBonWindow"
+﻿<Window x:Class="ParkingBonBis.ParkingBonWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:custom="clr-namespace:ParkingBon"
+        xmlns:custom="clr-namespace:ParkingBonBis"
         Title="Parking Bon" Height="379" Width="525" Closing="Window_Closing">
     <Window.CommandBindings>
         <CommandBinding Command="New" Executed="Niew"/>

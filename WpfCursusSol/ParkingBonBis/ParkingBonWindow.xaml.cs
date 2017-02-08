@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.IO;
 
-namespace ParkingBon
+namespace ParkingBonBis
 {
     /// <summary>
     /// Interaction logic for ParkingBonWindow.xaml
@@ -143,10 +143,50 @@ namespace ParkingBon
                 MessageBox.Show("Opslaan mislukt: " + ex.Message);
             }
         }
+        private double formBreedte = 640;
+        private double formHoogte = 320;
+        private double verPositie;
+
+        private FixedDocument StelAfdrukSamen()
+        {
+            FixedDocument document = new FixedDocument();
+            document.DocumentPaginator.PageSize =
+                new System.Windows.Size(formBreedte, formHoogte);
+            PageContent inhoud = new PageContent();
+            document.Pages.Add(inhoud);
+            FixedPage page = new FixedPage();
+            inhoud.Child = page;
+            page.Width = formBreedte;
+            page.Height = formHoogte;
+            verPositie = 96;
+            Image logo = new Image();
+            logo.Source = logoImage.Source;
+            logo.Margin = new Thickness(96);
+            page.Children.Add(logo);
+            TextBlock tekst = new TextBlock();
+            page.Children.Add(Regel("Datum: " + DatumBon.Text));
+            page.Children.Add(Regel("Starttijd: " + AankomstLabelTijd.Content));
+            page.Children.Add(Regel("Eindtijd: " + VertrekLabelTijd.Content));
+            page.Children.Add(Regel("Bedrag: " + TeBetalenLabel.Content));
+            return document;
+        }
+
+        private TextBlock Regel (string tekst)
+        {
+            TextBlock deRegel = new TextBlock();
+            deRegel.Margin = new Thickness(300, verPositie, 96, 96);
+            deRegel.FontSize = 18;
+            verPositie += 36;
+            deRegel.Text = tekst;
+            return deRegel;
+        }
 
         private void PrintPreviewExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-
+            Afdrukvoorbeeld preview = new Afdrukvoorbeeld();
+            preview.Owner = this;
+            preview.AfdrukDocument = StelAfdrukSamen();
+            preview.ShowDialog();
         }
 
         private void CloseExecuted(object sender, ExecutedRoutedEventArgs e)

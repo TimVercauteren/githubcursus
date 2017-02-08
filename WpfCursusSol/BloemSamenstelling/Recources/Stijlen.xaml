@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:BloemSamenstelling.Recources">
+    <Style TargetType="{x:Type Ellipse}">
+        <Setter Property="Fill" Value="{Binding ElementName=cirkelsKleuren, Path=Naam}"/>
+        <Setter Property="Stroke" Value="{Binding ElementName=cirkelsKaderKleuren, Path=Naam}"/>
+        <Setter Property="StrokeThickness" Value="{Binding ElementName=dikteCirkelSlider, Path=Value}"/>
+    </Style>
+    
+</ResourceDictionary>
