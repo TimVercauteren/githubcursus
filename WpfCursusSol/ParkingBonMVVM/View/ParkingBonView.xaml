@@ -1,0 +1,87 @@
+﻿<RibbonWindow x:Class="ParkingBonMVVM.View.ParkingBonView"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:global="clr-namespace:System.Globalization;assembly=mscorlib"
+                xmlns:local="clr-namespace:ParkingBonMVVM.ViewModel"
+        Title="ParkingBon" Height="450" Width="525">
+    <Window.Resources>
+        <local:IntToBoolean x:Key="IntNaarBool"/>
+        <local:TimeToBoolean x:Key="DateNaarBool"/>
+    </Window.Resources>
+    <DockPanel>
+        <Ribbon DockPanel.Dock="Top">
+            <Ribbon.QuickAccessToolBar>
+                <RibbonQuickAccessToolBar Height="24" Name="Qat">
+                    <RibbonButton SmallImageSource="pack://application:,,,/Images/open.jpg" 
+                                  Command="{Binding OpenCommand}"/>
+                    <RibbonButton SmallImageSource="pack://application:,,,/Images/save.jpg" 
+                                  Command="{Binding OpslaanCommand}"/>
+                </RibbonQuickAccessToolBar>
+            </Ribbon.QuickAccessToolBar>
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu SmallImageSource="pack://application:,,,/Images/bestand.png">
+                    <RibbonApplicationMenuItem Header="Nieuw" Command="{Binding NewCommand}"
+                                               QuickAccessToolBarImageSource="pack://application:,,,/Images/new.jpg"
+                                               ImageSource="pack://application:,,,/Images/new.jpg"/>
+                    <RibbonApplicationMenuItem Header="Openen" Command="{Binding OpenCommand}" 
+                                               ImageSource="pack://application:,,,/Images/open.jpg"/>
+                    <RibbonApplicationMenuItem Header="Opslaan" Command="{Binding SaveCommand}" 
+                                               ImageSource="pack://application:,,,/Images/save.jpg"/>
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+            <RibbonTab Header="Bestand">
+                <RibbonGroup>
+                    <RibbonButton LargeImageSource="pack://application:,,,/images/new.jpg"
+                                  Label="Nieuw"
+                                  Command="{Binding NewCommand}" Margin="5"/>
+                    <RibbonButton LargeImageSource="pack://application:,,,/images/open.jpg"
+                                  Label="Open"
+                                  Command="{Binding OpenCommand}" Margin="5"/>
+                    <RibbonButton LargeImageSource="pack://application:,,,/images/save.jpg"
+                                  Label="Opslaan"
+                                  Command="{Binding SaveCommand}" Margin="5"
+                                  IsEnabled="{Binding Bedrag}"/>
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition Width="225"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Name="logoImage" Source="pack://application:,,,/Images/parkingbon.jpg" 
+                   Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" 
+               Margin="0,0,10,0" Width="105"></Image>
+            <TextBlock Text="1€ per half uur" FontWeight="Bold"></TextBlock>
+            <DatePicker Name="DatumBon" Grid.Column="1" ToolTip="datum selecteren" 
+                    SelectedDateFormat="Long" VerticalAlignment="Center" 
+                    Margin="20,45,0,50" Height="24" SelectedDate="{Binding Datum}"></DatePicker>
+            <Label Name="AankomstLabel" Grid.Row="1" Grid.Column="0" 
+               HorizontalAlignment="Right">Aankomsttijd:</Label>
+            <TextBlock Name="AankomstTextBlock" Grid.Row="1" Grid.Column="1" 
+                   HorizontalAlignment="Center" Width="200" VerticalAlignment="Center"
+                   Text="{Binding AankomstTijd, StringFormat=HH:mm:ss}"></TextBlock>
+            <Label Name="BedragLabel" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right">Bedrag:</Label>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                <RepeatButton Margin="20,0"  Name="minder" Width="20" Content="-" 
+                          FontSize="14" FontWeight="ExtraBold" Command="{Binding MinCommand}"></RepeatButton>
+                <TextBlock Name="TeBetalenTextBlock" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" Width="100" Text="{Binding Bedrag, ConverterCulture=
+                {x:Static global:CultureInfo.CurrentCulture}, StringFormat=c}"></TextBlock>
+                <RepeatButton Margin="20,0"  Name="meer" HorizontalAlignment="Center" 
+                          Width="20" Content="+" FontSize="14" FontWeight="ExtraBold"
+                          Command="{Binding PlusCommand}"></RepeatButton>
+            </StackPanel>
+            <Label Name="VertrekLabel" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right">Vertrektijd:</Label>
+            <TextBlock Name="VertrekTextBlock" Grid.Row="3" Grid.Column="1" 
+                   HorizontalAlignment="Center" Width="200" VerticalAlignment="Center" 
+                   Height="16" Text="{Binding VertrekTijd, StringFormat=HH:mm:ss}"></TextBlock>
+        </Grid>
+    </DockPanel>
+</RibbonWindow>

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D30650E-737C-49E8-9876-5BA447D32276}</ProjectGuid>
+    <ProjectGuid>{DDF8FCB8-3F10-4255-91AC-6B27EB825D86}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ParkingBonMVVM</RootNamespace>
-    <AssemblyName>ParkingBonMVVM</AssemblyName>
+    <RootNamespace>MVVMHobby</RootNamespace>
+    <AssemblyName>MVVMHobby</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -53,7 +53,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -80,11 +79,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Parkeerbeurt.cs" />
-    <Compile Include="ViewModel\Convertors.cs" />
-    <Compile Include="ViewModel\ParkeerbeurtVM.cs" />
-    <Compile Include="View\ParkingBonView.xaml.cs">
-      <DependentUpon>ParkingBonView.xaml</DependentUpon>
+    <Compile Include="Model\Hobby.cs" />
+    <Compile Include="ViewModel\HobbyLijstVM.cs" />
+    <Compile Include="ViewModel\HobbyVM.cs" />
+    <Compile Include="View\HobbyLijstView.xaml.cs">
+      <DependentUpon>HobbyLijstView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageView.xaml.cs">
+      <DependentUpon>ImageView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -115,22 +117,28 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Page Include="View\ParkingBonView.xaml">
+    <Resource Include="Images\atletiek.jpg" />
+    <Resource Include="Images\basketbal.jpg" />
+    <Resource Include="Images\drum.jpg" />
+    <Resource Include="Images\gitaar.jpg" />
+    <Resource Include="Images\piano.jpg" />
+    <Resource Include="Images\tennis.jpg" />
+    <Resource Include="Images\trompet.jpg" />
+    <Resource Include="Images\turnen.jpg" />
+    <Resource Include="Images\voetbal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\HobbyLijstView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\ImageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\Bestand.png" />
-    <Resource Include="images\close.jpg" />
-    <Resource Include="images\new.jpg" />
-    <Resource Include="images\open.jpg" />
-    <Resource Include="images\parkingbon.jpg" />
-    <Resource Include="images\print.jpg" />
-    <Resource Include="images\save.jpg" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

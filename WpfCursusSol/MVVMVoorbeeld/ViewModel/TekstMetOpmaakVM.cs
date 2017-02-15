@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight.Command;
 using Microsoft.Win32;
 using System.IO;
 using System.Windows;
+using System.ComponentModel;
 
 namespace MVVMVoorbeeld.ViewModel
 {
@@ -133,12 +134,12 @@ namespace MVVMVoorbeeld.ViewModel
             Application.Current.MainWindow.Close();
         }
 
-        public RelayCommand<ConsoleCancelEventArgs> ClosingCommand
+        public RelayCommand<CancelEventArgs> ClosingCommand
         {
-            get { return new RelayCommand<ConsoleCancelEventArgs>(OnWindowClosing); }
+            get { return new RelayCommand<CancelEventArgs>(OnWindowClosing); }
         }
 
-        public void OnWindowClosing(ConsoleCancelEventArgs e)
+        public void OnWindowClosing(CancelEventArgs e)
         {
             if (MessageBox.Show("Afsluiten", "Wilt u het programma sluiten ?", MessageBoxButton.YesNo,
                 MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.No)

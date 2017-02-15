@@ -14,6 +14,7 @@
     <Window.Resources>
         <local:BooleanToFontWeight x:Key="LogischNaarFontDikte" />
         <local:BooleanToFontStyle x:Key="LogischNaarFontStijl" />
+        <local:IntToBoolean x:Key="IntegerNaarLogisch"/>
     </Window.Resources>
     <StackPanel Orientation="Horizontal">
         <Border BorderThickness="3" BorderBrush="Black">
@@ -21,7 +22,7 @@
                  FontWeight="{Binding Vet, Converter={StaticResource LogischNaarFontDikte}}"
                  FontStyle="{Binding Schuin, Converter={StaticResource LogischNaarFontStijl}}"
                  Text="{Binding Inhoud}">
-            </TextBox>
+        </TextBox>
         </Border>
         <StackPanel HorizontalAlignment="Center" Width="100">
             <ToggleButton Name="ButtonBold" Content="Bold" Margin="10"
@@ -29,8 +30,10 @@
             <ToggleButton Name="ButtonItalic" Content="Italic" Margin="10"
                           IsChecked="{Binding Schuin}"></ToggleButton>
             <Button Content="Nieuw" Margin="10,30,10,10" Command="{Binding NieuwCommand}"></Button>
-            <Button Content="Openen" Margin="10" Command="{Binding OpslaanCommand}"></Button>
-            <Button Content="Opslaan" Margin="10" Command="{Binding OpenCommand}"></Button>
+            <Button Content="Openen" Margin="10" Command="{Binding OpenCommand}"></Button>
+            <Button Content="Opslaan" Margin="10" Command="{Binding OpslaanCommand}"
+                    IsEnabled="{Binding ElementName=TekstTextBox, Path=Text.Length,
+                        Converter={StaticResource IntegerNaarLogisch}}"></Button>
             <Button Content="Afsluiten" Margin="10,30,10,10" Command="{Binding AfsluitenCommand}"></Button>
         </StackPanel>
     </StackPanel>
